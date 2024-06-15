@@ -1,0 +1,54 @@
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 90vh;
+}
+.popular h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+}
+.popular hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+.popular-item {
+    margin-top: 50px;
+    display: flex;
+    gap: 100px; /* Reduced gap */
+    
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+.popular-item img {
+    width: 250px; /* Reduced width of the image */
+    height: 250px; /* Reduced height of the image */
+    object-fit: cover; /* Ensure the image covers the entire area */
+    border-radius: 5px; /* Optional: Add some border radius for better appearance */
+}
+.popular-item p {
+    width: 250px; /* Match the width of the image */
+    margin: 6px 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-align: center; /* Center align the text */
+    word-wrap: break-word; /* Allow text to wrap within the width */
+    overflow: hidden; /* Hide overflow content */
+    display: -webkit-box; /* Display as a webkit box */
+    -webkit-box-orient: vertical; /* Vertical orientation */
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    line-clamp: 2; /* Fallback for browsers that support it */
+}
+.popular-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px; /* Adjust the gap between items here */
+    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
