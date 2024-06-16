@@ -6,8 +6,10 @@ import cart_icon from '../Assets/cart.png'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+  const { cartItems } = useContext(ShopContext);
 
     const [menu,setMenu] = useState("shop");
+    const cartItemCount = Object.values(cartItems).reduce((acc, cur) => acc + cur, 0);
   return (
     <div className='navbar'>
       <div className='nav-logo'>
@@ -22,8 +24,9 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart">
         <Link to='/login'><button>Login</button></Link>
-        <Link to='/cart'><img src={cart_icon} alt="" /></Link>
-        <div className="nav-cart-count">0</div>
+        <Link to='/cart'><img src={cart_icon} alt="" />
+        {cartItemCount > 0 && <div className="nav-cart-count">{cartItemCount}</div>}</Link>
+        
       </div>
     </div>
   )
